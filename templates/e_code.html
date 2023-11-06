@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{%block content%}
+<header>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('../static/assets/img/binary.jpg')">
+        <div class="carousel-caption">
+          <h5>Binary</h5>
+          <p style="color: rgb(179, 247, 53);">World is in between binary.</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('../static/assets/img/python.jpg')">
+        <div class="carousel-caption">
+          <h5>Python</h5>
+          <p>Snake oo oo language.</p>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('../static/assets/img/analytic.avif')">
+        <div class="carousel-caption">
+          <h5 style="color: rgb(179, 247, 53);">Analytics</h5>
+          <p style="color: rgb(86, 203, 211);">There is a pattern to it.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</header>
+
+<!-- Page Content -->
+<section class="py-5">
+  <div class="container">
+    <h1 class="fw-light">A Python Enthusiast</h1>
+    <p class="lead">Dedicated to mastering the language through various unique projects. With expertise in automation, web development, data science, and game creation, I'm equipped to take on professional Python programming. I've honed my skills with libraries like Selenium, Flask, and Scikit-Learn, building a robust portfolio of 100 projects to showcase my capabilities. Whether it's crafting fully fledged websites, diving into data science, or developing Python-powered games, I'm your go-to Python professional. Let's embark on this journey together and elevate your Python skills to new heights. </p>
+  </div>
+</section>
+
+{%endblock%}

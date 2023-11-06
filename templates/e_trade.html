@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"  background-color: #333 data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        .GFG::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background-image: url('../static/assets/img/front.avif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            block-size: 900px;
+
+            /* Specify the background image */
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+<div class="container" >
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" >
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4" style="z-index: 10;">Chetan Sharma</span>
+      </a>
+     <ul class="nav nav-pills" style="z-index: 10;">
+      <li class="nav-item"><a href="{{ url_for('get_app')}}" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary</a>
+         <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{{ url_for('e_trade')}}">Trade Compliance</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('e_product')}}">Product Management</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('e_coding')}}">Programming</a></li>
+        </ul></li>
+
+
+
+      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tools</a>
+        <ul class="dropdown-menu">
+         <li><a class="dropdown-item" href="{{ url_for('morse_form')}}">Morse Code</a></li>
+         <li><a class="dropdown-item" href="{{url_for('ttt')}}">Tic Tac Toe</a></li>
+         <li><a class="dropdown-item" href="#">News Aggregator(ASAP)</a></li>
+         </ul></li>
+     <li class="nav-item"><a href="{{url_for('get_contact')}}" class="nav-link">Contact me</a></li>
+
+    </ul>
+
+    </header>
+  </div>
+<div>
+
+<div class="container-sm " style="background-color: #000000;">
+<div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom GFG " >
+    <h1 class="animate__animated animate__bounce animate__delay-2s " style="color: rgb(80, 187, 103);">Trade Compliance<span class="text-danger">.</span></h1>
+   <div class="container-sm flex-wrap justify-content-center">
+    <article class="blog-post border-top p-sm-5" >
+      <h3 style="color: #8591d6;">Harmonized System (HS) Classification<span class="text-success">.</span></h3>
+      <p style="color: #fffefe; ">Adeptly analyzed and categorized complex products using Harmonized System (HS) codes, ensuring precise assessment of customs duties and global trade compliance.</p>
+      <p style="color: #fffefe;">Spearheaded the implementation of internal trade projects related to HS classification and other  aspects of import and export operations.</p>
+
+      <h3 style="color: #8591d6;">Regulatory Compliance and Expertise<span class="text-success">.</span></h3>
+      <p style="color: #fffefe;">Pioneered efforts in guaranteeing legal conformity with governmental regulations and measures related  to product classification.</p>
+      <p style="color: #fffefe;">Served as a Subject Matter Expert for Trademo's Landed Cost Calculator and Import-Export controls, facilitating streamlined trade operations.</p>
+
+      <h3 style="color: #8591d6;">Process Optimization and Standardization<span class="text-success">.</span></h3>
+      <p style="color: #fffefe;">Executed process flow optimization as per industry standards, creating Standard Operating Procedures (SOPs) to harmonize and streamline operations.</p>
+      <p style="color: #fffefe;">Conducted comprehensive tax content research and analysis for 45+ systems, including AvaTax, covering restrictions and prohibitions across various countries and regions.</p>
+
+      <h3 style="color: #8591d6;">Leadership and Complex Issue Resolution<span class="text-success">.</span></h3>
+      <p style="color: #fffefe;">Took on the role of Lead Analyst, overseeing a team of 11 experts for Avalara's Restrictions and Prohibitions content.</p>
+      <p style="color: #fffefe;">Acted as a bridge between stakeholders and the team, resolving intricate rate issues for systems such as HTS, EEU, and others, ensuring smooth operations and compliance.</p>
+      </article>
+</div>
+
+</div>
+
+</div>
+
+<div class="container position-relative" bis_skin_checked="1">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+
+      <li class="nav-item"><a href="{{url_for('get_contact')}}" class="nav-link px-2 text-body-secondary">Contact me</a></li>
+    </ul>
+    <p class="text-center text-body-secondary">© 2023 Chetan Sharma, Made with python, flask, jinja, bootstrap</p>
+  </footer>
+</div>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

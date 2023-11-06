@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"  background-color: #333 data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+
+        *,
+        *::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+
+        /* other */
+        .info {
+          margin: 20px 0;
+          text-align: center;
+        }
+
+        p {
+          color: #f0a3a3;
+          margin-bottom: 20px;
+        }
+
+
+        /* block-$ */
+        .block-effect {
+          font-size: calc(8px + 6vw);
+        }
+
+        .block-reveal {
+          --t: calc(var(--td) + var(--d));
+
+          color: transparent;
+          padding: 4px;
+
+          position: relative;
+          overflow: hidden;
+
+          animation: revealBlock 0s var(--t) forwards;
+        }
+
+        .block-reveal::after {
+          content: '';
+
+          width: 0%;
+          height: 100%;
+          padding-bottom: 4px;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          background: var(--bc);
+          animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;
+        }
+         /* animations */
+        @keyframes revealBlock {
+          100% {
+            color: #330707;
+          }
+        }
+
+        @keyframes revealingIn {
+
+          0% {
+            width: 0;
+          }
+
+          100% {
+            width:100%;
+          }
+        }
+
+        @keyframes revealingOut {
+
+          0% {
+            transform: translateX(0);
+          }
+
+          100% {
+            transform: translateX(100%);
+          }
+
+        }
+
+
+        .center {
+  border: 0px ;
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+}
+
+    </style>
+</head>
+<body style="background-color: #e09b1b;">
+<div class="container" bis_skin_checked="1">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Chetan Sharma</span>
+      </a>
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="{{ url_for('get_app')}}" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary</a>
+         <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{{ url_for('e_trade')}}">Trade Compliance</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('e_product')}}">Product Management</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('e_coding')}}">Programming</a></li>
+        </ul></li>
+
+
+
+      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tools</a>
+        <ul class="dropdown-menu">
+         <li><a class="dropdown-item" href="{{ url_for('morse_form')}}">Morse Code</a></li>
+         <li><a class="dropdown-item" href="{{url_for('ttt')}}">Tic Tac Toe</a></li>
+         <li><a class="dropdown-item" href="#">News Aggregator(ASAP)</a></li>
+         </ul></li>
+     <li class="nav-item"><a href="{{url_for('get_contact')}}" class="nav-link">Contact me</a></li>
+
+    </ul>
+
+    </header>
+  </div>
+  <div class="container" >
+  <h3 class="block-effect info " style="--td: 1.2s">
+    <p class="block-reveal" style="--bc: #FE5000; --d: .1s">Strategic Product Management and Collaborations</p>
+  </h3>
+  </div>
+  <div class="container" style="margin:50px ;">
+
+
+  <div class="section center">
+    <h2 class="block-reveal" style="--td: 1.2s; --bc: #001233; --d: .1s">Elevating Workflow Excellence</h2>
+    <p class="block-reveal" style="--td: 1.2s; --bc: #B15EFF; --d: .2s;">As a Product Manager, I bring a unique perspective to project collaborations, combining my coding skills with a keen understanding of user needs. I excel in engineering and stakeholder engagement, optimizing workflows for seamless operations. My prowess in landed cost formulation, rooted in country-specific calculations, strengthens your financial insights.</p>
+  </div>
+
+  <div class="section center">
+    <h2 class="block-reveal" style="--td: 1.2s; --bc: #001233; --d: .3s;">UX Innovation and Testing Prowess</h2>
+    <p class="block-reveal" style="--td: 1.2s; --bc: #B15EFF; --d: .4s">Collaborating closely with the design team, I enhance the User Interface (UI) and User Experience (UX) to drive superior customer engagement. My User Acceptance Testing (UAT) expertise guarantees a polished end product, complemented by my coding insights.</p>
+  </div>
+
+  <div class="section center">
+    <h2 class="block-reveal" style="--td: 1.2s; --bc: #001233; --d: .5s"> Product Precision and Management</h2>
+    <p class="block-reveal" style="--td: 1.2s; --bc: #B15EFF; --d: .6s">With my background in coding, I work alongside the engineering team to fine-tune product functionalities. Additionally, I excel in creating and implementing Product Requirement Documents (PRD) for Landed Cost Calculator, HS Classification, and Trade Compliance, offering a product management perspective that aligns your solutions with market needs.</p>
+  </div>
+
+  <div class="section center">
+    <h2 class="block-reveal" style="--td: 1.2s; --bc: #001233; --d: .7s">In-depth Market Insights</h2>
+    <p class="block-reveal" style="--td: 1.2s; --bc: #B15EFF; --d: .8s">Leveraging my coding skills, I conduct meticulous competitor research and market analysis to provide valuable insights, enabling your team to make informed strategic decisions.</p>
+  </div>
+
+  <div class="section center">
+    <h2 class="block-reveal" style="--td: 1.2s; --bc: #001233; --d: .9s">Client-Centric Approach</h2>
+    <p class="block-reveal" style="--td: 1.2s; --bc: #B15EFF; --d: 1s">Dedicated to understanding your clients, I perform thorough client research to tailor your solutions and services to their unique needs, utilizing my coding background to create customized solutions.</p>
+  </div>
+</div>
+<div class="container position-relative" bis_skin_checked="1">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+
+      <li class="nav-item"><a href="{{url_for('get_contact')}}" class="nav-link px-2 text-body-secondary">Contact me</a></li>
+    </ul>
+    <p class="text-center text-body-secondary">© 2023 Chetan Sharma, Made with python, flask, jinja, bootstrap</p>
+  </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block content %}
+
+<div class="d-flex justify-content-center">
+   <div class="col-md-7 col-lg-8" bis_skin_checked="1">
+    <h4 class="mb-3">Code/Decode</h4>
+       <div class="row g-1" bis_skin_checked="1">
+        <div class="col-sm-8" bis_skin_checked="1">
+
+            <form method="post" class="needs-validation" novalidate>
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                    {{ form.checkbox.label(class="form-check-label") }}
+                    {{ form.checkbox(class="form-check-input") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.text.label(class="form-label") }}
+                    {{ form.text(class="form-control", placeholder="Enter your text and if decoding enter with space") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.Output.label(class="form-label") }}
+                    {{ form.Output(class="form-control", placeholder="Output goes here", readonly=true) }}
+                </div>
+
+                <button type="submit" name="clear_button" value="clear" class="btn btn-warning" style="margin-bottom: 40px;">Clear Fields</button>
+                {{ form.submit(class="btn btn-primary") }}
+            </form>
+        </div>
+       </div>
+   </div>
+</div>
+
+{%endblock%}
