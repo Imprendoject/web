@@ -1,13 +1,21 @@
-from flask import Flask, render_template, redirect, url_for, request, flash
+from flask import Flask, render_template, redirect, url_for, request, flash, send_from_directory
 from flask_bootstrap import Bootstrap5
 from forms import CodeForm
 from morse import MorseCode
-
+import smtplib
+import json
 
 app = Flask(__name__)
 
+with open('secrets.json', 'r') as config_file:
+    config = json.load(config_file)
+
+my_email = config['email']
+password = config['password']
+secret_key = config['secret_key']
+
 bootstrap = Bootstrap5(app)
-app.secret_key = "imprendo"
+app.secret_key = secret_key
 morse_code = MorseCode()
 
 def clear_form(form):
@@ -21,10 +29,35 @@ def clear_form(form):
 def get_app():
     return render_template('index.html')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def get_contact():
+    if request.method == 'POST':
+        # Get form data
+        first_name = request.form['firstName']
+        last_name = request.form['lastName']
+        email = request.form['email']
+        address = request.form['address']
+
+        msg = f'First Name: {first_name}\nLast Name: {last_name}\nEmail: {email}\nMessage: {address}'
+        try:
+            with smtplib.SMTP('smtp.gmail.com') as connection:
+                connection.starttls()
+                connection.login(user=my_email, password=password)
+                connection.sendmail(from_addr=my_email,
+                                    to_addrs='chetansharama@gmail.com',
+                                    msg=f'Subject: Portfolio Mail\n\n{msg}')
+        except Exception as e:
+            # Handle email sending error here
+            print(f"Error sending email: {str(e)}")
+
+            # Redirect to the download page after sending the email
+        return redirect(url_for('download'))
+
     return render_template('form.html')
 
+@app.route('/download')
+def download():
+    return send_from_directory('static', 'files/Chetan_Sharma_GT.pdf')
 
 
 @app.route('/morese code', methods=['GET','POST'])
