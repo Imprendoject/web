@@ -7,12 +7,12 @@ import json
 
 app = Flask(__name__)
 
-with open('secrets.json', 'r') as config_file:
-    config = json.load(config_file)
+# with open('secrets.json', 'r') as config_file:
+#     config = json.load(config_file)
 
-my_email = config['email']
-password = config['password']
-secret_key = config['secret_key']
+my_email = my_email                           #config['email']
+password = password                            #config['password']
+secret_key = secret_key                         #config['secret_key']
 
 bootstrap = Bootstrap5(app)
 app.secret_key = secret_key
