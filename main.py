@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 my_email = my_email                           #config['email']
 password = password                            #config['password']
-secret_key = secret_key                         #config['secret_key']
+secret_key = 'secret_key'                         #config['secret_key']
 
 bootstrap = Bootstrap5(app)
 app.secret_key = secret_key
